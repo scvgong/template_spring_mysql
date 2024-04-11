@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class CommonCodeController {
 
-    @GetMapping("/commonCode/list/{num}")
+    @SuppressWarnings("unchecked")
+    @GetMapping("/q/r/commonCode/list/{num}")
     public ResponseEntity<Object> commonCodeList(@PathVariable String num){
 
         ArrayList arrayList = new ArrayList<>();
@@ -28,7 +29,8 @@ public class CommonCodeController {
         return ResponseEntity.ok().body(arrayList);
     }
 
-    @GetMapping("/commonCode/view/{pk_id}/{fk_id}/{name}")
+    @SuppressWarnings("unchecked")
+    @GetMapping("/q/r/commonCode/view/{pk_id}/{fk_id}/{name}")
     public ResponseEntity<Object> commonCodeView(@PathVariable String pk_id, @PathVariable String fk_id, @PathVariable String name){
 
         HashMap resultMap = new HashMap<>();

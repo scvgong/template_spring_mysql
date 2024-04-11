@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class HelloworldController {
     // /helloWorldResponseList/1/10/1
-    @GetMapping("/helloWorldResponseList/{currentPage}/{perPage}/{SN}") //변수 3개, 
+    @GetMapping("/r/helloWorldResponseList/{currentPage}/{perPage}/{SN}") //변수 3개, uri와 function의 매핑
     public ResponseEntity<Object> helloWorldResponseList(@PathVariable String currentPage, @PathVariable String perPage, @PathVariable String SN) {
                                                         // 변수선언 -> uri에서 동일한것을 찾는다. GetMapping 변수와 매칭
         // "spm_row": 471, "SN": 1, "CMPNM": "로이유통", "RDNMADR": null
@@ -39,7 +39,7 @@ public class HelloworldController {
         return ResponseEntity.ok().body(arrayList); // 네트웍으로 return 한다. 네트웍 통신을 위한 최접점 class 
     }
 
-    @GetMapping("/helloWorldResponseWithException/{companyId}")
+    @GetMapping("/r/helloWorldResponseWithException/{companyId}")
     public ResponseEntity<Object> helloWorldResponseWithException(@PathVariable String companyId){
         try {
             int result = 5 / 0;
