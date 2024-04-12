@@ -3,10 +3,21 @@ package com.example.co_templates.services;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.co_templates.daos.ShareDao;
 
 @Service
 public class CommonCodeService {
+
+    @Autowired
+    ShareDao shareDao;
+
+    public void callDao(){
+        shareDao.getList(null, null);
+        return;
+    }
 
     public HashMap<String,Object> mixed(Integer pageNumber, Integer pkid){
         HashMap<String,Object> resultMap = new HashMap<>();

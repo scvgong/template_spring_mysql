@@ -18,6 +18,12 @@ public class QuestCommonCodeController {
 
     @Autowired CommonCodeService commonCodeService; // CommonCodeService commonCodeService = new CommonCodeService(); 이 코드 역할을 대신해준다
 
+    @GetMapping("/r/commonCode/callDao")
+    public void callDao(){
+        commonCodeService.callDao();
+        return;
+    }
+
     @GetMapping("/r/commonCode/mixed/{pageNumber}/{pk_id}")
     public ResponseEntity<HashMap<String, Object>> mixed(@PathVariable("pageNumber") Integer pageNumber, @PathVariable("pk_id") Integer pkId) {
         // call service
