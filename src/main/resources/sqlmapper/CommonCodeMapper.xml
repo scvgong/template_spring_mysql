@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?> <!--해석하는 버전-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 이걸로 api 해석하세요 -->
+<mapper namespace="CommonCode"> <!-- namespace는 유니크 해야됨 업무 또는 파일이름과 동일 -->
+	<select id="selectByUID" parameterType="Map" resultType="Map">
+           SELECT * FROM spring_mysql.COMMON_CODE;
+	</select>
+</mapper>
